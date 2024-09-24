@@ -52,7 +52,7 @@ if (moderatorYetkisi() && $blogcek['kullanici_id'] != $_SESSION['kullanici_id'])
                                 </div>
                                 <div class="form-group">
                                     <label for="icerik">Blog İçerik</label>
-                                    <textarea name="icerik" id="editor1" class="ckeditor" required><?php echo htmlspecialchars($blogcek['blog_icerik']); ?></textarea>
+                                    <textarea name="aciklama" id="editor1" class="ckeditor" required><?php echo htmlspecialchars($blogcek['blog_aciklama']); ?></textarea>
                                 </div>
                                 <div class="form-group">
                                     <label for="sira">Sıra</label>

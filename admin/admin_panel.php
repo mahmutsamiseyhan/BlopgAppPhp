@@ -1,6 +1,4 @@
 <?php
-require_once '../partials/admin_header.php';
-require_once '../partials/admin_sidebar.php';
 require_once 'auth.php';
 
 girisKontrol();
@@ -107,7 +105,7 @@ $onay_bekleyen_yorum = $baglanti->query("SELECT COUNT(*) FROM yorumlar WHERE yor
                                                 <td>" . htmlspecialchars($blog['blog_baslik']) . "</td>
                                                 <td>" . htmlspecialchars($blog['kullanici_adsoyad']) . "</td>
                                                 <td>" . htmlspecialchars($blog['blog_zaman']) . "</td>
-                                                <td><a href='blog-duzenle.php?id=" . $blog['blog_id'] . "' class='text-muted'><i class='fas fa-edit'></i></a></td>
+                                                <td><a href='duzenle.php?sayfa=blog&id=" . htmlspecialchars($blog['blog_id']) . "' class='text-muted'><i class='fas fa-edit'></i></a></td>
                                               </tr>";
                                     }
                                     ?>
@@ -133,13 +131,13 @@ $onay_bekleyen_yorum = $baglanti->query("SELECT COUNT(*) FROM yorumlar WHERE yor
                                 </thead>
                                 <tbody>
                                     <?php
-                                    $son_yorumlar = $baglanti->query("SELECT y.*, b.blog_baslik FROM yorumlar y JOIN blog b ON y.blog_id = b.blog_id ORDER BY y.yorum_tarih DESC LIMIT 5");
+                                    $son_yorumlar = $baglanti->query("SELECT y.*, b.blog_baslik FROM yorumlar y JOIN blog b ON y.blog_id = b.blog_id ORDER BY y.yorum_zaman DESC LIMIT 5");
                                     while ($yorum = $son_yorumlar->fetch(PDO::FETCH_ASSOC)) {
                                         $durum = $yorum['yorum_onay'] ? '<span class="badge badge-success">Onaylı</span>' : '<span class="badge badge-warning">Onay Bekliyor</span>';
                                         echo "<tr>
                                                 <td>" . htmlspecialchars($yorum['yorum_adsoyad']) . "</td>
                                                 <td>" . htmlspecialchars($yorum['blog_baslik']) . "</td>
-                                                <td>" . htmlspecialchars($yorum['yorum_tarih']) . "</td>
+                                                <td>" . htmlspecialchars($yorum['yorum_zaman']) . "</td>
                                                 <td>$durum</td>
                                               </tr>";
                                     }
@@ -153,5 +151,3 @@ $onay_bekleyen_yorum = $baglanti->query("SELECT COUNT(*) FROM yorumlar WHERE yor
         </div>
     </section>
 </div>
-
-<?php require_once '../partials/admin_footer.php'; ?>

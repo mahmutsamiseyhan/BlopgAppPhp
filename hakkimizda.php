@@ -1,6 +1,7 @@
 <?php 
 require_once 'partials/header.php';
 require_once 'admin/auth.php';
+require_once 'function.php';
 
 // Hakkımızda bilgilerini veritabanından çekelim
 $hakkimizdasor = $baglanti->prepare("SELECT * FROM hakkimizda WHERE hakkimizda_id = :id");
@@ -27,7 +28,7 @@ if (!$hakkimizdacek) {
                 <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content">
                     <h3><?php echo guvenliCikti($hakkimizdacek['hakkimizda_baslik']); ?></h3>
                     <p class="font-italic">
-                        <?php echo nl2br(guvenliCikti(strip_tags(html_entity_decode($hakkimizdacek['hakkimizda_aciklama'])))); ?>
+                        <?php echo guvenliCikti($hakkimizdacek['hakkimizda_aciklama']); ?>
                     </p>
                     <?php if (!empty($hakkimizdacek['hakkimizda_vizyon'])) { ?>
                         <h4>Vizyonumuz</h4>

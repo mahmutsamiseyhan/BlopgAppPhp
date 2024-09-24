@@ -21,8 +21,8 @@ if (!$kategoricek) {
 }
 
 // İçerikleri çekelim
-$iceriksor = $baglanti->prepare("SELECT * FROM icerik WHERE kategori_id = :kategori_id ORDER BY icerik_sira ASC");
-$iceriksor->execute(['kategori_id' => $kategori_id]);
+$bloglaror = $baglanti->prepare("SELECT * FROM blog ORDER BY blog_sira ASC");
+$bloglaror->execute();
 ?>
 
 <br><br>
@@ -31,19 +31,19 @@ $iceriksor->execute(['kategori_id' => $kategori_id]);
         <div class="container" data-aos="fade-up">
             <h2 class="mb-5"><?php echo guvenliCikti($kategoricek['kategori_baslik']); ?> Kategorisi</h2>
             <div class="row" data-aos="zoom-in" data-aos-delay="100">
-                <?php while ($icerikcek = $iceriksor->fetch(PDO::FETCH_ASSOC)) { ?>
+                <?php while ($blogcek = $bloglaror->fetch(PDO::FETCH_ASSOC)) { ?>
                     <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
                         <div class="course-item">
-                            <img style="height:250px" src="Admin/resimler/icerik/<?php echo guvenliCikti($icerikcek['icerik_resim']); ?>" class="img-fluid" alt="<?php echo guvenliCikti($icerikcek['icerik_baslik']); ?>">
+                            <img style="height:250px" src="Admin/resimler/blog/<?php echo guvenliCikti($blogcek['blog_resim']); ?>" class="img-fluid" alt="<?php echo guvenliCikti($blogcek['blog_baslik']); ?>">
                             <div class="course-content">
                                 <h3>
-                                    <a href="icerik-detay.php?icerik_id=<?php echo $icerikcek['icerik_id']; ?>">
-                                        <?php echo guvenliCikti($icerikcek['icerik_baslik']); ?>
+                                    <a href="blog-detay.php?blog_id=<?php echo $blogcek['blog_id']; ?>">
+                                        <?php echo guvenliCikti($blogcek['blog_baslik']); ?>
                                     </a>
                                 </h3>
                                 <p>
                                     <?php 
-                                    $aciklama = strip_tags($icerikcek['icerik_aciklama']);
+                                    $aciklama = strip_tags($blogcek['blog_aciklama']);
                                     echo guvenliCikti(substr($aciklama, 0, 100)) . '...'; 
                                     ?>
                                 </p>

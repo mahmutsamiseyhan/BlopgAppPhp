@@ -5,8 +5,8 @@ require_once 'function.php';
 
 <section style="background-image:url(admin/resimler/slider/<?php echo guvenliCikti($slidercek['slider_resim']); ?>)" id="hero" class="d-flex justify-content-center align-items-center">
     <div class="container position-relative" data-aos="zoom-in" data-aos-delay="100">
-        <h1><?php nl2br(guvenliCikti(strip_tags(html_entity_decode($slidercek['slider_baslik'])))); ?></h1>
-        <h2><?php echo nl2br(guvenliCikti(strip_tags(html_entity_decode($slidercek['slider_aciklama'])))); ?></h2>
+        <h1><?php echo guvenliCikti($slidercek['slider_baslik']); ?></h1>
+        <h2><?php echo guvenliCikti($slidercek['slider_aciklama']); ?></h2>
         <a href="<?php echo guvenliCikti($slidercek['slider_link']); ?>" class="btn-get-started"><?php echo guvenliCikti($slidercek['slider_buton']); ?></a>
     </div>
 </section>

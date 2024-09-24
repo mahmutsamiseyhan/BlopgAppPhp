@@ -30,10 +30,13 @@ $slidercek=$slidersor->fetch(PDO::FETCH_ASSOC);
 
     <!-- Favicons -->
     <link href="assets/img/favicon.png" rel="icon">
-    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+     <!-- SİTE İKONU -->
+     <link rel="shortcut icon" href="admin/resimler/site-ico.ico">
 
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+        rel="stylesheet">
 
     <!-- Vendor CSS Files -->
     <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -49,7 +52,7 @@ $slidercek=$slidersor->fetch(PDO::FETCH_ASSOC);
 
     <!-- Template Main CSS File -->
     <link href="assets/css/style.css" rel="stylesheet">
-
+    
     <style>
     .header-social-links a {
         color: #333;
@@ -58,6 +61,7 @@ $slidercek=$slidersor->fetch(PDO::FETCH_ASSOC);
         line-height: 1px;
         transition: 0.3s;
     }
+
     .header-social-links a:hover {
         color: #5fcf80;
     }
@@ -69,8 +73,7 @@ $slidercek=$slidersor->fetch(PDO::FETCH_ASSOC);
     <!-- ======= Header ======= -->
     <header id="header" class="fixed-top">
         <div class="container d-flex align-items-center">
-
-            <h1 class="logo mr-auto"><a href="index.php">Yazılım Yolcusu</a></h1>
+            <h1 class="logo mr-auto"><a href="index.php">Blog App</a></h1>
 
             <nav class="nav-menu d-none d-lg-block">
                 <ul>
@@ -86,21 +89,23 @@ $slidercek=$slidersor->fetch(PDO::FETCH_ASSOC);
                             $kategorisor->execute();
                             while ($kategoricek=$kategorisor->fetch(PDO::FETCH_ASSOC)) {
                             ?>
-                            <li><a href="kategori-detay-<?=seo($kategoricek['kategori_baslik']).'-'.$kategoricek['kategori_id'] ?>"><?php echo $kategoricek['kategori_baslik'] ?></a></li>
+                            <li><a
+                                    href="kategori-detay-<?=seo($kategoricek['kategori_baslik']).'-'.$kategoricek['kategori_id'] ?>"><?php echo $kategoricek['kategori_baslik'] ?></a>
+                            </li>
                             <?php } ?>
                         </ul>
                     </li>
-                    <li><a href="iletisim.php">İletişim</a></li>
+                    <!-- <li><a href="iletisim.php">İletişim</a></li> -->
                 </ul>
             </nav><!-- .nav-menu -->
 
             <div class="header-social-links ml-auto">
                 <?php if(isset($_SESSION['kullanici_id'])): ?>
-                    <a href="admin/index.php" title="Profilim"><i class="fas fa-user"></i></a>
-                    <a href="cikis.php" title="Çıkış Yap"><i class="fas fa-sign-out-alt"></i></a>
+                <a href="admin/index.php" title="Profilim"><i class="fas fa-user"></i></a>
+                <a href="cikis.php" title="Çıkış Yap"><i class="fas fa-sign-out-alt"></i></a>
                 <?php else: ?>
-                    <a href="admin/giris.php" title="Giriş Yap"><i class="fas fa-sign-in-alt"></i></a>
-                    <a href="admin/kayit.php" title="Kayıt Ol"><i class="fas fa-user-plus"></i></a>
+                <a href="admin/giris.php" title="Giriş Yap"><i class="fas fa-sign-in-alt"></i></a>
+                <a href="admin/kayit.php" title="Kayıt Ol"><i class="fas fa-user-plus"></i></a>
                 <?php endif; ?>
             </div>
 

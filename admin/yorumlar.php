@@ -19,7 +19,8 @@ if (adminYetkisi()) {
         JOIN blog ON yorumlar.blog_id = blog.blog_id 
         ORDER BY yorumlar.yorum_zaman DESC
     ");
-} else {
+    $yorumsor->execute();
+} else if(moderatorYetkisi()) {
     // Moderator kullanıcılar için kendi bloglarına ait yorumları çek
     $yorumsor = $baglanti->prepare("
         SELECT yorumlar.*, blog.blog_baslik 
@@ -31,7 +32,6 @@ if (adminYetkisi()) {
     $yorumsor->execute(['kullanici_id' => $_SESSION['kullanici_id']]);
 }
 
-$yorumsor->execute();
 ?>
 
 <div class="content-wrapper">

@@ -80,8 +80,17 @@ function yetkiKntrl($yetki) {
  * @param string $data Güvenli hale getirilecek veri
  * @return string Güvenli hale getirilmiş veri
  */
+// Güvenli çıktı fonksiyonu
 function guvenliCikti($data) {
-    return htmlspecialchars($data, ENT_QUOTES, 'UTF-8');
+    // HTML entity'lerini normal karakterlere dönüştür
+    $data = html_entity_decode($data, ENT_QUOTES, 'UTF-8');
+    
+    // HTML etiketlerini temizle
+    $data = strip_tags($data);
+    
+    // HTML özel karakterlerini güvenli hale getir
+    return nl2br(htmlspecialchars($data, ENT_QUOTES, 'UTF-8'));
 }
+
 
 ?>

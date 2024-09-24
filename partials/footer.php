@@ -21,7 +21,7 @@
                         </li>
                         <li><i class="bx bx-chevron-right"></i> <a style="color:white" href="ekip">Ekibimiz</a></li>
                         <li><i class="bx bx-chevron-right"></i> <a style="color:white" href="blog">Blog</a></li>
-                        <li><i class="bx bx-chevron-right"></i> <a style="color:white" href="iletisim">İletişim</a></li>
+                        <!-- <li><i class="bx bx-chevron-right"></i> <a style="color:white" href="iletisim">İletişim</a></li> -->
                     </ul>
                 </div>
 
@@ -42,36 +42,37 @@ while ($kategoricek=$kategorisor->fetch(PDO::FETCH_ASSOC)) {
                 </div>
 
                 <div class="col-lg-4 col-md-6 footer-newsletter">
-                    <h4 style="color:white">E-bültene abone olun</h4>
+                    <!-- <h4 style="color:white">E-bültene abone olun</h4>
                     <p style="color:white">E-bültene abone olarak anında içeriklerden haberdar olabilirsiniz.</p>
                     <form action="admin/islem.php" method="post">
                         <input placeholder="Lütfen email giriniz." type="email" name="email">
                         <input name="abone" type="submit" value="Abone Ol">
-                    </form>
+                    </form> -->
                 </div>
 
             </div>
         </div>
     </div>
-
+<div>
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3047.967581625265!2d29.057522!3d40.187534899999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14ca3de2cae40b37%3A0x9bf6a2c5985be498!2sTophane%20Saat%20Kulesi!5e0!3m2!1str!2str!4v1727174994858!5m2!1str!2str" width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false"
+    tabindex="0"></iframe>
+</div>
     <div class="container d-md-flex py-4">
 
         <div class="mr-md-auto text-center text-md-left">
             <div style="color: white" class="copyright">
-                &copy; Tüm Hakları Saklıdır <strong><span> </span></strong> <?php echo date("Y") ?>
+                &copy; Tüm Hakları Saklıdır<strong><span> </span></strong> <?php echo date("Y") ?>
             </div>
             <div style="color:white" class="credits">
-
-                Kodlama <a target="_blank" href="https://yazilimyolcusu.com/">Yazılım Yolcusu</a>
             </div>
         </div>
-        <div class="social-links text-center text-md-right pt-3 pt-md-0">
+        <!-- <div class="social-links text-center text-md-right pt-3 pt-md-0">
             <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
             <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
             <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
             <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
             <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
-        </div>
+        </div> -->
     </div>
 </footer><!-- End Footer -->
 

@@ -2,11 +2,11 @@
 require_once 'partials/header.php';
 require_once 'admin/auth.php';
 
-// Yetki kontrolü
-if (!adminYetkisi() && !moderatorYetkisi()) {
-    header("Location: yetkisiz.php");
-    exit;
-}
+// // Yetki kontrolü
+// if (!adminYetkisi() && !moderatorYetkisi()) {
+//     header("Location: yetkisiz.php");
+//     exit;
+// }
 
 // Blog ve içerik bilgilerini çekme
 if (adminYetkisi()) {

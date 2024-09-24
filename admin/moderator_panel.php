@@ -1,6 +1,4 @@
 <?php
-require_once '../partials/admin_header.php';
-require_once '../partials/admin_sidebar.php';
 require_once 'auth.php';
 
 girisKontrol();
@@ -63,5 +61,3 @@ $onay_bekleyen_yorum = $onay_bekleyen_yorum_sorgu->fetchColumn();
         </div>
     </section>
 </div>
-
-<?php require_once '../partials/admin_footer.php'; ?>

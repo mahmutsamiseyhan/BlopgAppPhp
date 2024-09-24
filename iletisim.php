@@ -49,20 +49,27 @@ $csrf_token = csrfTokenOlustur();
                     <form action="admin/islem.php" method="post" class="php-email-form">
                         <div class="form-row">
                             <div class="col-md-6 form-group">
-                                <input type="text" name="name" class="form-control" id="name" placeholder="Adınız" required minlength="2" maxlength="50">
+                                <input type="text" name="name" class="form-control" id="name" placeholder="Adınız"
+                                    required minlength="2" maxlength="50">
                             </div>
                             <div class="col-md-6 form-group">
-                                <input type="email" class="form-control" name="email" id="email" placeholder="Email adresiniz" required>
+                                <input type="email" class="form-control" name="email" id="email"
+                                    placeholder="Email adresiniz" required>
                             </div>
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control" name="subject" id="subject" placeholder="Konu" required minlength="4" maxlength="100">
+                            <input type="text" class="form-control" name="subject" id="subject" placeholder="Konu"
+                                required minlength="4" maxlength="100">
                         </div>
                         <div class="form-group">
-                            <textarea class="form-control" name="message" rows="5" placeholder="Mesajınız" required minlength="10" maxlength="1000"></textarea>
+                            <textarea class="form-control" name="message" rows="5" placeholder="Mesajınız" required
+                                minlength="10" maxlength="1000"></textarea>
                         </div>
                         <input type="hidden" name="csrf_token" value="<?php echo $csrf_token; ?>">
-                        <div class="text-center"><button type="submit" name="iletisim_gonder">Gönder</button></div>
+                        <div class="text-center">
+                            <button type="submit" name="iletisim_gonder">Gönder</button>
+                        </div>
+
                     </form>
                 </div>
             </div>
@@ -71,7 +78,8 @@ $csrf_token = csrfTokenOlustur();
 
     <!-- Google Maps -->
     <div data-aos="fade-up">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3009.981173630286!2d28.974128666654074!3d41.02566782461609!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab9e700764735%3A0xe01e13276edb60db!2zR2FsYXRhLCBCZXlvxJ9sdS_EsHN0YW5idWw!5e0!3m2!1str!2str!4v1609783464666!5m2!1str!2str" width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3047.967581625265!2d29.057522!3d40.187534899999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14ca3de2cae40b37%3A0x9bf6a2c5985be498!2sTophane%20Saat%20Kulesi!5e0!3m2!1str!2str!4v1727174994858!5m2!1str!2str" width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false"
+        tabindex="0"></iframe>
     </div>
 </main>
 

@@ -3,13 +3,15 @@ require_once '../partials/admin_header.php';
 require_once '../partials/admin_sidebar.php';
 require_once 'auth.php';
 
+
 girisKontrol();
 
 if (!adminYetkisi()) {
     header("Location: yetkisiz.php");
     exit;
 }
-
+// CSRF token kontrolü
+$csrf_token = csrfTokenOlustur();
 // Kullanıcıları veritabanından çekelim
 $kullanicisor = $baglanti->prepare("SELECT * FROM kullanici ORDER BY kullanici_id DESC");
 $kullanicisor->execute();
@@ -55,11 +57,11 @@ $kullanicisor->execute();
                                         <td><?php echo htmlspecialchars($kullanicicek['kullanici_rol']); ?></td>
                                         <td><?php echo $kullanicicek['kullanici_zaman']; ?></td>
                                         <td>
-                                            <a href="duzenle/kullanici_duzenle.php?id=<?php echo $kullanicicek['kullanici_id']; ?>" class="btn btn-warning btn-sm">Düzenle</a>
                                             <form action="islem.php" method="POST" style="display: inline;">
                                                 <input type="hidden" name="id" value="<?php echo $kullanicicek['kullanici_id']; ?>">
-                                                <button type="submit" name="kullanicisil" class="btn btn-danger btn-sm" onclick="return confirm('Bu kullanıcıyı silmek istediğinizden emin misiniz?')">Sil</button>
                                                 <input type="hidden" name="csrf_token" value="<?php echo $csrf_token; ?>">
+                                                <button type="submit" name="kullanicisil" class="btn btn-danger btn-md" onclick="return confirm('Bu kullanıcıyı silmek istediğinizden emin misiniz?')">Sil</button>
+                                                
                                             </form>
                                         </td>
                                     </tr>

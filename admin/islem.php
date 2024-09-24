@@ -277,6 +277,7 @@ if (isset($_POST['kullaniciduzenle'])) {
 // Kullanıcı silme işlemi
 if (isset($_POST['kullanicisil'])) {
     girisKontrol();
+    
     $id = filter_var($_POST['id'], FILTER_SANITIZE_NUMBER_INT);
 
     $sil = $baglanti->prepare("DELETE FROM kullanici WHERE kullanici_id = :id");
@@ -746,7 +747,7 @@ if (isset($_POST['blogyorumkaydet'])) {
 
     $kaydet = $baglanti->prepare("INSERT INTO yorumlar SET 
         yorum_kategori = :kategori,
-        icerik_id = :blog_id,
+        blog_id = :blog_id,
         yorum_adsoyad = :adsoyad,
         yorum_detay = :detay,
         yorum_onay = :onay
